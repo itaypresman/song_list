@@ -1,5 +1,7 @@
 const dotenv = require('dotenv');
 const express = require('express');
+const multer = require('multer');
+const fs = require('fs');
 const BodyParser = require('body-parser');
 const cors = require('cors');
 const { sequelize } = require('./utils/db');
