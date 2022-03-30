@@ -1,11 +1,9 @@
 const Router = require('express').Router;
-const { body } = require('express-validator');
 const router = new Router();
+const SongController = require('../controllers/song.controller.js');
 
 
-router.get('/list',
-    (req, res) => console.log('List:', req.body)
-);
+router.get('/list', SongController.list);
 
 router.post('/upload',
     (req, res) => console.log('Upload:', req.body)
