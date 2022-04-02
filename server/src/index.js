@@ -1,7 +1,5 @@
 const dotenv = require('dotenv');
 const express = require('express');
-const multer = require('multer');
-const fs = require('fs');
 const BodyParser = require('body-parser');
 const cors = require('cors');
 const { sequelize } = require('./utils/db');
@@ -13,7 +11,7 @@ dotenv.config();
 const port = process.env.PORT;
 const app = express();
 
-app.use(cors({ credentials: true, origin: process.env.CLIENT_DOMAIN }));
+app.use(cors());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 

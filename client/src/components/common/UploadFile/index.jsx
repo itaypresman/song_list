@@ -2,13 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-Button.propTypes = {
-    onClick: PropTypes.func.isRequired,
+UploadFile.prototype = {
+    onChange: PropTypes.func.isRequired,
 };
 
 
-export default function Button({ onClick }) {
+export default function UploadFile({ onChange }) {
     return (
-        <input type={ 'file' } onClick={ onClick }/>
+        <input
+            accept='text/csv'
+            multiple
+            type='file'
+            onChange={ onChange }
+        />
     );
 }

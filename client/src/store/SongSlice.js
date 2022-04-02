@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     songs: [],
     error: null,
-    is_loading: true,
+    is_loading: false,
+    is_uploading: false,
 };
 
 const SongSlice = createSlice({
@@ -20,10 +21,13 @@ const SongSlice = createSlice({
         },
         setIsLoading: (state, action) => {
             state.is_loading = action.payload;
-        }
+        },
+        setIsUploading: (state, action) => {
+            state.is_uploading = action.payload;
+        },
     }
 });
 
 
-export const { setSongs, setError, setIsLoading } = SongSlice.actions;
+export const { setSongs, setError, setIsLoading, setIsUploading } = SongSlice.actions;
 export default SongSlice.reducer;

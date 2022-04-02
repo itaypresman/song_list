@@ -15,11 +15,17 @@ export const getSongsRequest = () => async (dispatch) => {
     dispatch(setIsLoading(false));
 }
 
-export const uploadRequest = () => async (dispatch) => {
+export const uploadRequest = (file) => async (dispatch) => {
     try {
         dispatch(setIsLoading(true));
 
-        const response = await axios.get(process.env.API_URL + '/list');
+        const data = new FormData();
+        data.set('file', file);
+
+        const response = await axios.post(process.env.API_URL + '/upload', data, {
+            headers: { 'Content-type': 'multipart/form-data' }
+        });
+
         dispatch(setSongs(response.data));
     } catch (e) {
         dispatch(setError(e.message));
