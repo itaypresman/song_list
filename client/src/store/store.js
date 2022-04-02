@@ -4,7 +4,7 @@ import InterfaceSlice from '@Store/InterfaceSlice.js';
 
 
 const rootReducer = combineReducers({
-    song: SongSlice,
+    songs: SongSlice,
     interface: InterfaceSlice,
 });
 

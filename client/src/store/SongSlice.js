@@ -2,21 +2,21 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 const initialState = {
-    songs: [],
+    list: [],
     error: null,
     is_loading: false,
     is_uploading: false,
 };
 
 const SongSlice = createSlice({
-    name: 'song',
+    name: 'songs',
     initialState,
     reducers: {
         setError(state, action) {
             state.error = action.payload || null;
         },
         setSongs(state, action) {
-            state.songs = action.payload;
+            state.list = action.payload;
             state.error = null;
         },
         setIsLoading: (state, action) => {

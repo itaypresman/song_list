@@ -9,7 +9,7 @@ export default function () {
         <React.Fragment>
             <Routes>
                 <Route path='/' element={ <Upload /> }/>
-                <Route path='/list' element={ <List /> }/>
+                <Route path='/songs' element={ <List /> }/>
             </Routes>
         </React.Fragment>
     );
